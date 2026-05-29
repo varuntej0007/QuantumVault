@@ -104,38 +104,41 @@ Benchmarks were executed on:
 | Benchmark Runs | 1000 iterations                   |
 | Conditions     | Sequential single-threaded        |
 
+---
+
 # 📊 Benchmark Visualizations
 
-## Full PQC vs RSA Benchmark
+## 🔹 Full PQC vs RSA Benchmark
 
 <p align="center">
-  <img src="plots/full_comparison.png" width="900">
+  <img src="benchmarks/plots/full_comparison.png" width="900">
 </p>
 
 ---
 
-## Key Generation Latency
+## 🔹 Key Generation Latency (Log Scale)
 
 <p align="center">
-  <img src="plots/keygen_latency.png" width="900">
+  <img src="benchmarks/plots/keygen_latency.png" width="900">
 </p>
 
 ---
 
-## System Resource Usage
+## 🔹 System Resource Usage During Benchmarking
 
 <p align="center">
-  <img src="plots/system_resources.png" width="900">
+  <img src="benchmarks/plots/system_resources.png" width="900">
 </p>
 
 ---
 
-## AES-256-GCM Throughput Scaling
+## 🔹 AES-256-GCM Throughput Scaling
 
 <p align="center">
-  <img src="plots/throughput.png" width="900">
+  <img src="benchmarks/plots/throughput.png" width="900">
 </p>
 
+---
 ### Statistical Analysis
 
 * ✅ Mean latency
