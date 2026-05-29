@@ -1,0 +1,116 @@
+{
+  "metadata": {
+    "platform": "Raspberry Pi 5 8GB",
+    "arch": "armhf (32-bit userspace on aarch64 kernel)",
+    "os": "Raspberry Pi OS Bookworm",
+    "liboqs_version": "0.10.1",
+    "timestamp": "2026-05-29T03:43:48.533876",
+    "iterations": 1000,
+    "disclaimer": "Results represent key-generation and operation latency under sequential single-threaded benchmark conditions on this specific hardware. PQC algorithms differ from RSA in key sizes, signature bandwidth, and workload characteristics \u2014 direct comparisons are context-dependent."
+  },
+  "kyber768": {
+    "keygen": {
+      "mean_ms": 0.1727,
+      "stdev_ms": 0.278,
+      "min_ms": 0.1553,
+      "max_ms": 8.819,
+      "ci95_lo_ms": 0.1555,
+      "ci95_hi_ms": 0.19,
+      "n": 1000
+    },
+    "encap": {
+      "mean_ms": 0.1947,
+      "stdev_ms": 0.0421,
+      "min_ms": 0.1871,
+      "max_ms": 1.1383,
+      "ci95_lo_ms": 0.1921,
+      "ci95_hi_ms": 0.1973,
+      "n": 1000
+    },
+    "decap": {
+      "mean_ms": 0.1959,
+      "stdev_ms": 0.035,
+      "min_ms": 0.1889,
+      "max_ms": 1.1509,
+      "ci95_lo_ms": 0.1937,
+      "ci95_hi_ms": 0.198,
+      "n": 1000
+    },
+    "key_sizes": {
+      "pub_bytes": 1184,
+      "capsule_bytes": 1088,
+      "shared_secret_bytes": 32
+    }
+  },
+  "dilithium3": {
+    "keygen": {
+      "mean_ms": 0.5206,
+      "stdev_ms": 0.0576,
+      "min_ms": 0.4806,
+      "max_ms": 1.5317,
+      "ci95_lo_ms": 0.517,
+      "ci95_hi_ms": 0.5242,
+      "n": 1000
+    },
+    "sign": {
+      "mean_ms": 1.5452,
+      "stdev_ms": 0.9839,
+      "min_ms": 0.6608,
+      "max_ms": 7.965,
+      "ci95_lo_ms": 1.4842,
+      "ci95_hi_ms": 1.6061,
+      "n": 1000
+    },
+    "verify": {
+      "mean_ms": 0.5048,
+      "stdev_ms": 0.1497,
+      "min_ms": 0.4669,
+      "max_ms": 4.7003,
+      "ci95_lo_ms": 0.4955,
+      "ci95_hi_ms": 0.5141,
+      "n": 1000
+    },
+    "key_sizes": {
+      "pub_bytes": 1952,
+      "signature_bytes": 3293
+    }
+  },
+  "rsa2048": {
+    "keygen": {
+      "mean_ms": 320.9859,
+      "stdev_ms": 202.8142,
+      "min_ms": 42.1916,
+      "max_ms": 1566.4736,
+      "ci95_lo_ms": 308.4153,
+      "ci95_hi_ms": 333.5565,
+      "n": 1000
+    },
+    "encrypt": {
+      "mean_ms": 0.183,
+      "stdev_ms": 0.0202,
+      "min_ms": 0.1697,
+      "max_ms": 0.7542,
+      "ci95_lo_ms": 0.1817,
+      "ci95_hi_ms": 0.1842,
+      "n": 1000
+    },
+    "decrypt": {
+      "mean_ms": 3.9002,
+      "stdev_ms": 0.1828,
+      "min_ms": 3.7563,
+      "max_ms": 5.0045,
+      "ci95_lo_ms": 3.8889,
+      "ci95_hi_ms": 3.9115,
+      "n": 1000
+    }
+  },
+  "system": {
+    "cpu_mean_pct": 25.63339416058392,
+    "cpu_max_pct": 100.0,
+    "temp_mean_c": 44.21491788321179,
+    "temp_max_c": 47.4,
+    "ram_mean_mb": 25.00567264233564,
+    "ram_peak_mb": 25.157632,
+    "samples": 1096
+  }
+}

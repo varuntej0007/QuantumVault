@@ -1,0 +1,7 @@
+config/key_store/*.enc
+config/key_store/*.key
+venv/
+__pycache__/
+*.pyc
+.env
+logs/audit.log

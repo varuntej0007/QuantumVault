@@ -1,0 +1,65 @@
+{
+  "report_type": "CBOM",
+  "generated": "2026-05-29T03:35:49.591876",
+  "platform": "Raspberry Pi 5 8GB",
+  "standard_alignment": [
+    "NIST FIPS 203",
+    "NIST FIPS 204",
+    "RBI Q-SAFE"
+  ],
+  "inventory": {
+    "ATM_Network_Node": {
+      "current_algo": "RSA-2048",
+      "usage": "PIN block encryption",
+      "quantum_risk": "CRITICAL",
+      "migration_target": "Kyber-768 + AES-256-GCM",
+      "estimated_migration_ms": 0.21,
+      "notes": "High-priority \u2014 directly handles customer PINs"
+    },
+    "Core_Banking_TLS": {
+      "current_algo": "ECDH-P256 + AES-128",
+      "usage": "Branch-to-datacenter communication",
+      "quantum_risk": "HIGH",
+      "migration_target": "Kyber-768 + AES-256-GCM",
+      "estimated_migration_ms": 0.2,
+      "notes": "Harvest-now-decrypt-later risk for archived transactions"
+    },
+    "Inter_Bank_Settlement": {
+      "current_algo": "RSA-4096",
+      "usage": "RTGS / NEFT transaction signing",
+      "quantum_risk": "CRITICAL",
+      "migration_target": "Dilithium-3",
+      "estimated_migration_ms": 0.49,
+      "notes": "NPCI settlement layer \u2014 regulatory priority"
+    },
+    "Mobile_Banking_Auth": {
+      "current_algo": "RSA-2048",
+      "usage": "OTP and session token signing",
+      "quantum_risk": "HIGH",
+      "migration_target": "Dilithium-3",
+      "estimated_migration_ms": 0.49,
+      "notes": "300M+ users \u2014 migration must be backward compatible"
+    },
+    "Document_Signing": {
+      "current_algo": "RSA-2048",
+      "usage": "Loan agreements, KYC documents",
+      "quantum_risk": "MEDIUM",
+      "migration_target": "Dilithium-3",
+      "estimated_migration_ms": 0.49,
+      "notes": "Long-lived documents need long-term signature validity"
+    },
+    "Audit_Log_Integrity": {
+      "current_algo": "SHA-256 + RSA",
+      "usage": "Tamper-evident audit trails",
+      "quantum_risk": "MEDIUM",
+      "migration_target": "SHA-3 + Dilithium-3",
+      "estimated_migration_ms": 0.49,
+      "notes": "Regulatory requirement \u2014 logs must be verifiable for 10 years"
+    }
+  },
+  "summary": {
+    "total_systems": 6,
+    "critical_systems": 2,
+    "total_migration_overhead_ms": 2.37
+  }
+}

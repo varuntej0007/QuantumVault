@@ -1,0 +1,37 @@
+[
+  {
+    "size_label": "1 KB",
+    "size_bytes": 1000,
+    "enc_mean_ms": 0.15842210000300838,
+    "dec_mean_ms": 0.008329599995704484,
+    "throughput_mbs": 6.312250626528813
+  },
+  {
+    "size_label": "10 KB",
+    "size_bytes": 10000,
+    "enc_mean_ms": 0.022794400092607248,
+    "dec_mean_ms": 0.015350100056821248,
+    "throughput_mbs": 438.7042413651076
+  },
+  {
+    "size_label": "100 KB",
+    "size_bytes": 100000,
+    "enc_mean_ms": 0.10484439994797867,
+    "dec_mean_ms": 0.10670189999473223,
+    "throughput_mbs": 953.7943852949481
+  },
+  {
+    "size_label": "1 MB",
+    "size_bytes": 1000000,
+    "enc_mean_ms": 1.3016602000334387,
+    "dec_mean_ms": 1.3110344000324403,
+    "throughput_mbs": 768.2496553050564
+  },
+  {
+    "size_label": "10 MB",
+    "size_bytes": 10000000,
+    "enc_mean_ms": 11.638720599921726,
+    "dec_mean_ms": 11.817174400039221,
+    "throughput_mbs": 859.2009675073095
+  }
+]

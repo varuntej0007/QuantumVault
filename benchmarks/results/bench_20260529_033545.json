@@ -1,0 +1,44 @@
+{
+  "platform": "Raspberry Pi 5 8GB",
+  "arch": "armhf on aarch64 kernel",
+  "timestamp": "2026-05-29T03:32:55.491457",
+  "iterations": 500,
+  "kyber768": {
+    "keygen_mean_ms": 0.1834945400014476,
+    "keygen_stdev_ms": 0.3309762545386722,
+    "encap_mean_ms": 0.2162232479931845,
+    "encap_stdev_ms": 0.3657705197927823,
+    "decap_mean_ms": 0.2008117239920466,
+    "decap_stdev_ms": 0.047829170448262744,
+    "pub_key_bytes": 1184,
+    "capsule_bytes": 1088,
+    "shared_secret_bytes": 32
+  },
+  "dilithium3": {
+    "keygen_mean_ms": 0.4997208519944252,
+    "keygen_stdev_ms": 0.03141185321714459,
+    "sign_mean_ms": 1.4850098919969241,
+    "sign_stdev_ms": 0.9258197501314493,
+    "verify_mean_ms": 0.4823952700053269,
+    "verify_stdev_ms": 0.021779653943100438,
+    "signature_bytes": 3293,
+    "pub_key_bytes": 1952
+  },
+  "rsa2048": {
+    "keygen_mean_ms": 332.84688913200534,
+    "keygen_stdev_ms": 210.23494662887518,
+    "encrypt_mean_ms": 0.19394800799000222,
+    "encrypt_stdev_ms": 0.03243422708125685,
+    "decrypt_mean_ms": 3.897377029994459,
+    "decrypt_stdev_ms": 0.18314344650090836
+  },
+  "system": {
+    "cpu_mean_pct": 27.80546737213404,
+    "cpu_max_pct": 100.0,
+    "temp_mean_c": 44.97980599647288,
+    "temp_max_c": 46.85,
+    "ram_mean_mb": 24.848936634920673,
+    "ram_peak_mb": 24.932352,
+    "samples": 567
+  }
+}
