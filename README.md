@@ -1,127 +1,275 @@
-# QuantumVault
-### Post-Quantum Cryptography File Encryption & Migration Research Platform
+# ⚛️ QuantumVault
 
-> **Research prototype.** Not production-ready. See [security_notes/LIMITATIONS.md](security_notes/LIMITATIONS.md).
+### Post-Quantum Cryptography Migration & Edge Infrastructure Research Platform
 
-Built on NIST-standardized CRYSTALS-Kyber-768 (FIPS 203) and CRYSTALS-Dilithium-3 (FIPS 204), running on Raspberry Pi 5 (8GB) — edge-native, no cloud dependency.
+> 🚧 **Research Prototype — Not Production Ready**
+> QuantumVault is an experimental post-quantum cryptographic benchmarking and migration-analysis platform designed for ARM edge infrastructure research.
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.11-blue?style=for-the-badge&logo=python">
+  <img src="https://img.shields.io/badge/Raspberry%20Pi%205-ARM%20Edge-red?style=for-the-badge&logo=raspberrypi">
+  <img src="https://img.shields.io/badge/PQC-Kyber768%20%7C%20Dilithium3-green?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Status-Research%20Prototype-orange?style=for-the-badge">
+</p>
 
 ---
 
-## Motivation
+# 📌 Overview
 
-The Reserve Bank of India constituted the Q-SAFE Expert Committee (May 2025) to evaluate quantum-safe cryptography for India's financial sector, including Cryptography Bill of Materials (CBOM) assessment and migration roadmap development.
+QuantumVault explores the feasibility of deploying **NIST-standardized post-quantum cryptographic algorithms** on constrained ARM edge systems such as the Raspberry Pi 5.
 
-QuantumVault is a student-led proof-of-concept demonstrating that NIST-standardized PQC algorithms are deployable on commodity ARM edge hardware — the infrastructure tier most relevant to distributed banking endpoints and edge systems.
+The project focuses on:
+
+* 🔐 Hybrid PQC encryption workflows
+* 📊 ARM edge benchmarking
+* 🏦 Cryptographic migration simulation for financial infrastructure
+* 📦 CBOM (Cryptography Bill of Materials) analysis
+* ⚡ Crypto-agility experimentation
+* 📈 Statistical performance characterization
 
 ---
 
-## Architecture
+# 🇮🇳 Motivation — RBI Q-SAFE Alignment
+
+In 2025, the Reserve Bank of India (RBI) constituted the **Q-SAFE Expert Committee** to evaluate:
+
+* Quantum-safe cryptography migration
+* Financial cryptographic inventory (CBOM)
+* Crypto-agility readiness
+* Deployment feasibility
+* Infrastructure modernization pathways
+
+QuantumVault is a student-led experimental platform exploring whether modern post-quantum cryptographic systems can realistically operate on commodity ARM edge hardware relevant to:
+
+* ATM nodes
+* Banking edge infrastructure
+* Distributed authentication systems
+* Secure embedded financial endpoints
+
+---
+
+# 🏗️ Cryptographic Architecture
 
 ```text
-FILE -> AES-256-GCM (key K) -> Ciphertext CT
-        |
-        v
-Kyber-768 encapsulates K -> Capsule C
-        |
-        v
-Dilithium-3 signs (C | Nonce | CT) -> Signature
-        |
-        v
-.qvault = { Magic | Capsule | Signature | Ciphertext }
+User File
+    │
+    ▼
+AES-256-GCM Encryption
+    │
+    ▼
+Kyber-768 Encapsulation
+    │
+    ▼
+Dilithium-3 Digital Signature
+    │
+    ▼
+.qvault Secure Container
+```
 
-DECRYPT:
-Verify Signature -> Decapsulate Capsule -> Recover AES Key -> Decrypt Ciphertext
-Benchmark Results
+### Secure Container Structure
 
-Results measured on Raspberry Pi 5 8GB (armhf, 32-bit userspace) under sequential single-threaded benchmark conditions, 1000 iterations with 95% confidence intervals.
+```text
+.qvault = {
+    Magic Header,
+    Kyber Capsule,
+    Nonce,
+    Dilithium Signature,
+    AES-GCM Ciphertext
+}
+```
 
-PQC and RSA algorithms differ in key sizes, bandwidth overhead, and workload characteristics. Comparisons are platform-specific and context-dependent.
+### Decryption Workflow
 
-Operation	Kyber-768	Dilithium-3	RSA-2048
-KeyGen (mean)	~0.18ms	~0.49ms	~332ms
-Enc / Encap / Sign	~0.20ms	~1.49ms	~0.19ms
-Dec / Decap / Verify	~0.20ms	~0.48ms	~3.89ms
-CPU peak	42.5%	—	100%
-Temp peak	44.6°C	—	46.9°C
-Observation
+```text
+Verify Signature
+      ↓
+Decapsulate Kyber Capsule
+      ↓
+Recover AES Session Key
+      ↓
+Decrypt Ciphertext
+```
 
-Observed substantially lower key-generation latency for Kyber-768 compared to RSA-2048 on Raspberry Pi 5 ARM hardware under tested benchmark conditions.
+---
 
-Throughput Benchmarks
-File Size	Encrypt Time	Decrypt Time	Throughput
-1 KB	0.16ms	0.01ms	6.3 MB/s
-10 KB	0.02ms	0.02ms	438.7 MB/s
-100 KB	0.10ms	0.11ms	953.8 MB/s
-1 MB	1.30ms	1.31ms	768.2 MB/s
-10 MB	11.64ms	11.82ms	859.2 MB/s
-Features
-Kyber-768 key encapsulation
-Dilithium-3 digital signatures
-AES-256-GCM authenticated encryption
-Hybrid PQC encryption pipeline
-Custom .qvault secure container format
-RSA-to-PQC migration simulation
-CBOM-oriented infrastructure analysis
-ARM edge benchmarking suite
-Statistical benchmark framework
-JSON benchmark export
-Automated plot generation
-CBOM Simulation
+# 🧪 Benchmark Methodology
 
-QuantumVault includes an experimental Cryptography Bill of Materials (CBOM) simulator aligned with RBI Q-SAFE migration themes.
+Benchmarks were executed on:
 
-Example simulated infrastructure:
+| Hardware       | Specification                     |
+| -------------- | --------------------------------- |
+| Raspberry Pi 5 | 8GB ARM Cortex-A76                |
+| OS             | Raspberry Pi OS (armhf userspace) |
+| Python         | 3.11                              |
+| Benchmark Runs | 1000 iterations                   |
+| Conditions     | Sequential single-threaded        |
 
-ATM Network Nodes
-Core Banking TLS
-Mobile Banking Authentication
-Inter-bank Settlement Systems
-Audit Log Integrity
-Document Signing Pipelines
-Repository Structure
-/core
-/benchmarks
-/results
-/plots
-/tests
-/docs
-/security_notes
-Security Notes
+### Statistical Analysis
 
-QuantumVault is an experimental research platform.
+* ✅ Mean latency
+* ✅ 95% confidence intervals
+* ✅ Throughput analysis
+* ✅ CPU utilization
+* ✅ Thermal measurements
+* ✅ Repeated-trial characterization
 
-Current implementation does NOT yet address:
+---
 
-side-channel resistance
-hardware fault attacks
-secure enclave integration
-enterprise key management
-formal cryptographic audits
-production-scale deployment hardening
+# 📊 Benchmark Results
+
+| Operation        | Kyber-768 | Dilithium-3 | RSA-2048 |
+| ---------------- | --------- | ----------- | -------- |
+| Key Generation   | ~0.18ms   | ~0.49ms     | ~332ms   |
+| Encrypt / Sign   | ~0.20ms   | ~1.49ms     | ~0.19ms  |
+| Decrypt / Verify | ~0.20ms   | ~0.48ms     | ~3.89ms  |
+| CPU Peak         | 42.5%     | —           | 100%     |
+| Thermal Peak     | 44.6°C    | —           | 46.9°C   |
+
+> ⚠️ Results are platform-specific and workload-dependent.
+> PQC and RSA algorithms differ in bandwidth, signature size, and deployment characteristics.
+
+---
+
+# 🚀 Throughput Performance
+
+| File Size | Encrypt Time | Decrypt Time | Throughput |
+| --------- | ------------ | ------------ | ---------- |
+| 1 KB      | 0.16ms       | 0.01ms       | 6.3 MB/s   |
+| 10 KB     | 0.02ms       | 0.02ms       | 438.7 MB/s |
+| 100 KB    | 0.10ms       | 0.11ms       | 953.8 MB/s |
+| 1 MB      | 1.30ms       | 1.31ms       | 768.2 MB/s |
+| 10 MB     | 11.64ms      | 11.82ms      | 859.2 MB/s |
+
+---
+
+# 🏦 CBOM Simulation Layer
+
+QuantumVault includes an experimental **Cryptography Bill of Materials (CBOM)** simulation aligned with RBI Q-SAFE migration concepts.
+
+### Simulated Infrastructure Components
+
+* 🏧 ATM Network Nodes
+* 🔒 Core Banking TLS
+* 📱 Mobile Banking Authentication
+* 🧾 Audit Log Integrity
+* 💳 Inter-bank Settlement Systems
+* ✍️ Secure Document Signing Pipelines
+
+---
+
+# 📂 Repository Structure
+
+```text
+/core               Core cryptographic engine
+/benchmarks         Statistical benchmark suites
+/results            JSON benchmark outputs
+/plots              Generated benchmark visualizations
+/tests              Failure-mode & validation tests
+/docs               Technical documentation
+/security_notes     Threat models & limitations
+```
+
+---
+
+# 🔑 Core Features
+
+* ✅ Kyber-768 key encapsulation
+* ✅ Dilithium-3 digital signatures
+* ✅ AES-256-GCM authenticated encryption
+* ✅ Hybrid PQC encryption workflow
+* ✅ Secure `.qvault` container format
+* ✅ ARM edge benchmarking suite
+* ✅ Statistical benchmark framework
+* ✅ CBOM-oriented migration analysis
+* ✅ RSA → PQC migration experimentation
+* ✅ Automated benchmark plot generation
+
+---
+
+# ⚠️ Security Notes
+
+QuantumVault is an **experimental research platform**.
+
+Current implementation does **NOT** yet address:
+
+* Side-channel resistance
+* Hardware fault attacks
+* Secure enclave integration
+* Enterprise key management
+* Formal cryptographic audits
+* Production deployment hardening
 
 See:
 
-security_notes/LIMITATIONS.md
-security_notes/THREAT_MODEL.md
-Future Work
-NVIDIA Jetson Orin Nano benchmarking
-GPU-assisted cryptographic acceleration
-Secure edge transaction simulation
-Hybrid RSA + PQC migration workflows
-Thermal and power characterization
-Concurrent workload benchmarking
-Extended failure-mode analysis
-Reproducibility
+* `security_notes/LIMITATIONS.md`
+* `security_notes/THREAT_MODEL.md`
 
-Benchmarks include:
+---
 
-500-iteration and 1000-iteration runs
-JSON result archival
-matplotlib plot generation
-confidence interval calculation
-ARM platform-specific measurement logging
-Disclaimer
+# 🔬 Future Work
 
-QuantumVault is a research and educational project intended for experimental benchmarking and infrastructure migration analysis only.
+## ARM + GPU Expansion
 
-It is NOT production-ready banking software and should not be deployed in real financial environments without formal security review and cryptographic audit.
+* NVIDIA Jetson Orin Nano benchmarking
+* GPU-assisted cryptographic acceleration
+* Concurrent workload scaling
+
+## Edge Infrastructure Research
+
+* Secure transaction simulation
+* Crypto-agility orchestration
+* Hybrid RSA + PQC workflows
+
+## Systems Characterization
+
+* Thermal profiling
+* Power analysis
+* Sustained-load testing
+* Extended failure-mode analysis
+
+---
+
+# 📈 Research Direction
+
+QuantumVault is evolving toward:
+
+> Experimental Post-Quantum Secure Edge Infrastructure Benchmarking & Migration Research
+
+with focus on:
+
+* Embedded security systems
+* ARM edge infrastructure
+* Banking migration feasibility
+* Crypto-agility analysis
+* Accelerated cryptographic workloads
+
+---
+
+# 📜 Disclaimer
+
+QuantumVault is intended for:
+
+* Research
+* Benchmarking
+* Educational experimentation
+* Infrastructure migration analysis
+
+It is **NOT production-ready banking software** and must not be deployed in real financial environments without formal security review and cryptographic audit.
+
+---
+
+# 👨‍💻 Author
+
+**Varun Tej M**
+B.Tech CSE (IoT) — Malla Reddy University
+Research Interests:
+
+* Post-Quantum Cryptography
+* Edge Infrastructure
+* Quantum Systems
+* Secure Embedded Computing
+* Accelerated Computing
+
+---
+
+⭐ If you found this project interesting, consider starring the repository.
