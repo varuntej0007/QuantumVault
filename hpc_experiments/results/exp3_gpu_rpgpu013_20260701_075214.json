@@ -1,0 +1,80 @@
+{
+  "experiment": "aes_throughput",
+  "platform": "PARAM Rudra IUAC",
+  "node": "rpgpu013",
+  "gpu": "NVIDIA A100 80GB PCIe",
+  "timestamp": "2026-07-01T07:52:14.973994",
+  "cpu_results": [
+    {
+      "size_label": "1 KB",
+      "size_bytes": 1000,
+      "use_case": "Single transaction record",
+      "enc_mean_ms": 1.974,
+      "dec_mean_ms": 0.043,
+      "throughput_mbs": 0.5,
+      "iterations": 20
+    },
+    {
+      "size_label": "10 KB",
+      "size_bytes": 10000,
+      "use_case": "Transaction batch",
+      "enc_mean_ms": 0.008,
+      "dec_mean_ms": 0.007,
+      "throughput_mbs": 1331.7,
+      "iterations": 20
+    },
+    {
+      "size_label": "100 KB",
+      "size_bytes": 100000,
+      "use_case": "Daily statement",
+      "enc_mean_ms": 0.03,
+      "dec_mean_ms": 0.029,
+      "throughput_mbs": 3379.7,
+      "iterations": 20
+    },
+    {
+      "size_label": "1 MB",
+      "size_bytes": 1000000,
+      "use_case": "Branch daily report",
+      "enc_mean_ms": 0.277,
+      "dec_mean_ms": 0.287,
+      "throughput_mbs": 3615.6,
+      "iterations": 20
+    },
+    {
+      "size_label": "10 MB",
+      "size_bytes": 10000000,
+      "use_case": "Regional audit log",
+      "enc_mean_ms": 2.87,
+      "dec_mean_ms": 2.882,
+      "throughput_mbs": 3484.8,
+      "iterations": 20
+    },
+    {
+      "size_label": "100 MB",
+      "size_bytes": 100000000,
+      "use_case": "Monthly archive",
+      "enc_mean_ms": 42.538,
+      "dec_mean_ms": 46.966,
+      "throughput_mbs": 2350.8,
+      "iterations": 20
+    },
+    {
+      "size_label": "1 GB",
+      "size_bytes": 1000000000,
+      "use_case": "Annual regulatory archive",
+      "enc_mean_ms": 442.102,
+      "dec_mean_ms": 458.293,
+      "throughput_mbs": 2261.9,
+      "iterations": 5
+    }
+  ],
+  "gpu_available": false,
+  "note": "AES-256-GCM used for bulk data encryption after ML-KEM-768 key establishment. Results show encryption throughput for banking-relevant data volumes on HPC-grade hardware.",
+  "jetson_comparison": {
+    "note": "Jetson Orin Nano 8GB results from prior characterization",
+    "jetson_100kb_mbs": 976.1,
+    "jetson_1mb_mbs": 1160.5,
+    "jetson_10mb_mbs": 1330.4
+  }
+}

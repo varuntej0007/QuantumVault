@@ -1,0 +1,63 @@
+==========================================
+SLURM_CLUSTER_NAME = paramprabha
+SLURM_JOB_ACCOUNT = iuac
+SLURM_JOB_ID = 572969
+SLURM_JOB_NAME = qvx_exp3_gpu_aes
+SLURM_JOB_NODELIST = rpgpu013
+SLURM_JOB_USER = hpctw14
+SLURM_JOB_UID = 52060
+SLURM_JOB_PARTITION = gpu
+SLURM_TASK_PID = 2307704
+SLURM_SUBMIT_DIR = /scratch/hpctw14/quantumvault_hpc/QuantumVault
+SLURM_CPUS_ON_NODE = 8
+SLURM_NTASKS = 
+SLURM_TASK_PID = 2307704
+==========================================
+Job ID: 572969 | Node: rpgpu013 | Start: Wed Jul  1 13:21:48 IST 2026
+Wed Jul  1 13:21:52 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 550.54.14              Driver Version: 550.54.14      CUDA Version: 12.4     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100 80GB PCIe          Off |   00000000:3B:00.0 Off |                    0 |
+| N/A   55C    P0             82W /  300W |       0MiB /  81920MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA A100 80GB PCIe          Off |   00000000:5E:00.0 Off |                    0 |
+| N/A   56C    P0             78W /  300W |       0MiB /  81920MiB |      2%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+Experiment 3: AES-256-GCM Throughput — NVIDIA A100 80GB PCIe
+Node: rpgpu013
+
+Size             Enc ms     Dec ms     Throughput Use case
+----------------------------------------------------------------------
+1 KB               1.97       0.04          0.5 MB/s  Single transaction record
+10 KB              0.01       0.01       1331.7 MB/s  Transaction batch
+100 KB             0.03       0.03       3379.7 MB/s  Daily statement
+1 MB               0.28       0.29       3615.6 MB/s  Branch daily report
+10 MB              2.87       2.88       3484.8 MB/s  Regional audit log
+100 MB            42.54      46.97       2350.8 MB/s  Monthly archive
+1 GB             442.10     458.29       2261.9 MB/s  Annual regulatory archive
+
+CuPy not installed — CPU-only results recorded
+(For GPU AES: install cupy-cuda12x in qvx env)
+
+--- Comparison with Jetson Orin Nano ---
+  100 KB: PARAM Rudra 3380 MB/s vs Jetson 976 MB/s (3.5x)
+  1 MB: PARAM Rudra 3616 MB/s vs Jetson 1160 MB/s (3.1x)
+  10 MB: PARAM Rudra 3485 MB/s vs Jetson 1330 MB/s (2.6x)
+
+Results saved: /scratch/hpctw14/quantumvault_hpc/QuantumVault/hpc_experiments/results/exp3_gpu_rpgpu013_20260701_075214.json
+End: Wed Jul  1 13:22:14 IST 2026 | EXPERIMENT 3 COMPLETE

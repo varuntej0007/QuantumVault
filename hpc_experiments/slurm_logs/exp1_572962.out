@@ -1,0 +1,93 @@
+==========================================
+SLURM_CLUSTER_NAME = paramprabha
+SLURM_JOB_ACCOUNT = iuac
+SLURM_JOB_ID = 572962
+SLURM_JOB_NAME = qvx_exp1_concurrent
+SLURM_JOB_NODELIST = rpcn465
+SLURM_JOB_USER = hpctw14
+SLURM_JOB_UID = 52060
+SLURM_JOB_PARTITION = standard
+SLURM_TASK_PID = 1918597
+SLURM_SUBMIT_DIR = /scratch/hpctw14/quantumvault_hpc/QuantumVault
+SLURM_CPUS_ON_NODE = 48
+SLURM_NTASKS = 
+SLURM_TASK_PID = 1918597
+==========================================
+Job ID: 572962
+Node: rpcn465
+CPUs: 48
+Start: Wed Jul  1 13:10:18 IST 2026
+liboqs-python faulthandler is disabled
+QuantumVault-X Concurrent Benchmark
+Platform: rpcn465
+Max workers: 48
+Iterations per worker: 200
+Total operations per test: 9600
+
+============================================================
+TEST 1: ML-KEM-768 Full Session (KeyGen + Encap + Decap)
+============================================================
+  Testing ML-KEM-768 with 1 concurrent workers...
+    Workers= 1 |   1311.1 ops/s | p50=0.066ms | p99=0.090ms
+  Testing ML-KEM-768 with 2 concurrent workers...
+    Workers= 2 |  11047.1 ops/s | p50=0.148ms | p99=0.202ms
+  Testing ML-KEM-768 with 4 concurrent workers...
+    Workers= 4 |  10552.2 ops/s | p50=0.324ms | p99=0.721ms
+  Testing ML-KEM-768 with 8 concurrent workers...
+    Workers= 8 |  10418.2 ops/s | p50=0.659ms | p99=1.675ms
+  Testing ML-KEM-768 with 12 concurrent workers...
+    Workers=12 |  10054.7 ops/s | p50=0.973ms | p99=3.094ms
+  Testing ML-KEM-768 with 24 concurrent workers...
+    Workers=24 |   8406.2 ops/s | p50=2.358ms | p99=6.934ms
+  Testing ML-KEM-768 with 48 concurrent workers...
+    Workers=48 |   7856.4 ops/s | p50=0.599ms | p99=11.336ms
+
+============================================================
+TEST 2: ML-DSA-65 Sign+Verify Session
+============================================================
+  Testing ML-DSA-65 with 1 concurrent workers...
+    Workers= 1 |   5117.7 ops/s | p50=0.150ms | p99=0.411ms
+  Testing ML-DSA-65 with 2 concurrent workers...
+    Workers= 2 |   8806.5 ops/s | p50=0.168ms | p99=0.485ms
+  Testing ML-DSA-65 with 4 concurrent workers...
+    Workers= 4 |  11585.4 ops/s | p50=0.254ms | p99=0.562ms
+  Testing ML-DSA-65 with 8 concurrent workers...
+    Workers= 8 |  12363.1 ops/s | p50=0.475ms | p99=1.353ms
+  Testing ML-DSA-65 with 12 concurrent workers...
+    Workers=12 |  12281.9 ops/s | p50=0.695ms | p99=2.200ms
+  Testing ML-DSA-65 with 24 concurrent workers...
+    Workers=24 |   8943.9 ops/s | p50=0.529ms | p99=4.502ms
+  Testing ML-DSA-65 with 48 concurrent workers...
+    Workers=48 |   9918.8 ops/s | p50=2.994ms | p99=13.084ms
+
+============================================================
+TEST 3: RSA-2048 KeyGen (classical baseline)
+============================================================
+  Testing RSA-2048 with 1 concurrent workers...
+    Workers= 1 |     19.3 ops/s | p50=47.4ms | p99=123.6ms
+  Testing RSA-2048 with 2 concurrent workers...
+    Workers= 2 |     39.4 ops/s | p50=43.8ms | p99=161.0ms
+  Testing RSA-2048 with 4 concurrent workers...
+    Workers= 4 |     90.6 ops/s | p50=38.9ms | p99=140.6ms
+  Testing RSA-2048 with 8 concurrent workers...
+    Workers= 8 |    170.8 ops/s | p50=39.1ms | p99=151.7ms
+  Testing RSA-2048 with 12 concurrent workers...
+    Workers=12 |    246.5 ops/s | p50=38.1ms | p99=161.9ms
+  Testing RSA-2048 with 24 concurrent workers...
+    Workers=24 |    474.3 ops/s | p50=43.3ms | p99=134.7ms
+  Testing RSA-2048 with 48 concurrent workers...
+    Workers=48 |    827.1 ops/s | p50=46.5ms | p99=174.7ms
+
+============================================================
+SUMMARY
+============================================================
+Peak ML-KEM-768 throughput: 11047 ops/sec
+Peak ML-DSA-65  throughput: 12363 ops/sec
+Peak RSA-2048   throughput: 827 ops/sec
+ML-KEM vs RSA throughput:   13.4x more ops/sec
+UPI peak reference (est.):  5000 TPS
+ML-KEM can handle UPI peak: True
+
+Results saved: /scratch/hpctw14/quantumvault_hpc/QuantumVault/hpc_experiments/results/exp1_rpcn465_20260701_074058.json
+End: Wed Jul  1 13:10:58 IST 2026
+EXPERIMENT 1 COMPLETE

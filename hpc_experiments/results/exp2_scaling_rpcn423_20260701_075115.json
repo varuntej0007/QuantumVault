@@ -1,0 +1,353 @@
+{
+  "experiment": "scaling_curve",
+  "platform": "PARAM Rudra IUAC",
+  "node": "rpcn423",
+  "timestamp": "2026-07-01T07:51:15.001156",
+  "algorithm": "ML-KEM-768",
+  "ops_per_core": 500,
+  "scaling_data": [
+    {
+      "cores": 1,
+      "throughput_ops_per_sec": 3009.8,
+      "speedup": 1.0,
+      "parallel_efficiency_pct": 100.0,
+      "wall_time_s": 0.166
+    },
+    {
+      "cores": 2,
+      "throughput_ops_per_sec": 11007.9,
+      "speedup": 3.657,
+      "parallel_efficiency_pct": 182.9,
+      "wall_time_s": 0.091
+    },
+    {
+      "cores": 3,
+      "throughput_ops_per_sec": 10694.7,
+      "speedup": 3.553,
+      "parallel_efficiency_pct": 118.4,
+      "wall_time_s": 0.14
+    },
+    {
+      "cores": 4,
+      "throughput_ops_per_sec": 10599.2,
+      "speedup": 3.522,
+      "parallel_efficiency_pct": 88.0,
+      "wall_time_s": 0.189
+    },
+    {
+      "cores": 5,
+      "throughput_ops_per_sec": 10789.5,
+      "speedup": 3.585,
+      "parallel_efficiency_pct": 71.7,
+      "wall_time_s": 0.232
+    },
+    {
+      "cores": 6,
+      "throughput_ops_per_sec": 10673.6,
+      "speedup": 3.546,
+      "parallel_efficiency_pct": 59.1,
+      "wall_time_s": 0.281
+    },
+    {
+      "cores": 7,
+      "throughput_ops_per_sec": 10709.9,
+      "speedup": 3.558,
+      "parallel_efficiency_pct": 50.8,
+      "wall_time_s": 0.327
+    },
+    {
+      "cores": 8,
+      "throughput_ops_per_sec": 7307.4,
+      "speedup": 2.428,
+      "parallel_efficiency_pct": 30.3,
+      "wall_time_s": 0.547
+    },
+    {
+      "cores": 9,
+      "throughput_ops_per_sec": 9666.4,
+      "speedup": 3.212,
+      "parallel_efficiency_pct": 35.7,
+      "wall_time_s": 0.466
+    },
+    {
+      "cores": 10,
+      "throughput_ops_per_sec": 10514.3,
+      "speedup": 3.493,
+      "parallel_efficiency_pct": 34.9,
+      "wall_time_s": 0.476
+    },
+    {
+      "cores": 11,
+      "throughput_ops_per_sec": 9242.1,
+      "speedup": 3.071,
+      "parallel_efficiency_pct": 27.9,
+      "wall_time_s": 0.595
+    },
+    {
+      "cores": 12,
+      "throughput_ops_per_sec": 7794.2,
+      "speedup": 2.59,
+      "parallel_efficiency_pct": 21.6,
+      "wall_time_s": 0.77
+    },
+    {
+      "cores": 13,
+      "throughput_ops_per_sec": 7800.0,
+      "speedup": 2.592,
+      "parallel_efficiency_pct": 19.9,
+      "wall_time_s": 0.833
+    },
+    {
+      "cores": 14,
+      "throughput_ops_per_sec": 7782.7,
+      "speedup": 2.586,
+      "parallel_efficiency_pct": 18.5,
+      "wall_time_s": 0.899
+    },
+    {
+      "cores": 15,
+      "throughput_ops_per_sec": 9809.9,
+      "speedup": 3.259,
+      "parallel_efficiency_pct": 21.7,
+      "wall_time_s": 0.765
+    },
+    {
+      "cores": 16,
+      "throughput_ops_per_sec": 8669.8,
+      "speedup": 2.881,
+      "parallel_efficiency_pct": 18.0,
+      "wall_time_s": 0.923
+    },
+    {
+      "cores": 17,
+      "throughput_ops_per_sec": 7692.5,
+      "speedup": 2.556,
+      "parallel_efficiency_pct": 15.0,
+      "wall_time_s": 1.105
+    },
+    {
+      "cores": 18,
+      "throughput_ops_per_sec": 8656.2,
+      "speedup": 2.876,
+      "parallel_efficiency_pct": 16.0,
+      "wall_time_s": 1.04
+    },
+    {
+      "cores": 19,
+      "throughput_ops_per_sec": 7556.0,
+      "speedup": 2.51,
+      "parallel_efficiency_pct": 13.2,
+      "wall_time_s": 1.257
+    },
+    {
+      "cores": 20,
+      "throughput_ops_per_sec": 8353.2,
+      "speedup": 2.775,
+      "parallel_efficiency_pct": 13.9,
+      "wall_time_s": 1.197
+    },
+    {
+      "cores": 21,
+      "throughput_ops_per_sec": 7649.8,
+      "speedup": 2.542,
+      "parallel_efficiency_pct": 12.1,
+      "wall_time_s": 1.373
+    },
+    {
+      "cores": 22,
+      "throughput_ops_per_sec": 7151.3,
+      "speedup": 2.376,
+      "parallel_efficiency_pct": 10.8,
+      "wall_time_s": 1.538
+    },
+    {
+      "cores": 23,
+      "throughput_ops_per_sec": 8357.8,
+      "speedup": 2.777,
+      "parallel_efficiency_pct": 12.1,
+      "wall_time_s": 1.376
+    },
+    {
+      "cores": 24,
+      "throughput_ops_per_sec": 6750.5,
+      "speedup": 2.243,
+      "parallel_efficiency_pct": 9.3,
+      "wall_time_s": 1.778
+    },
+    {
+      "cores": 25,
+      "throughput_ops_per_sec": 8496.5,
+      "speedup": 2.823,
+      "parallel_efficiency_pct": 11.3,
+      "wall_time_s": 1.471
+    },
+    {
+      "cores": 26,
+      "throughput_ops_per_sec": 6352.1,
+      "speedup": 2.11,
+      "parallel_efficiency_pct": 8.1,
+      "wall_time_s": 2.047
+    },
+    {
+      "cores": 27,
+      "throughput_ops_per_sec": 7232.1,
+      "speedup": 2.403,
+      "parallel_efficiency_pct": 8.9,
+      "wall_time_s": 1.867
+    },
+    {
+      "cores": 28,
+      "throughput_ops_per_sec": 6998.2,
+      "speedup": 2.325,
+      "parallel_efficiency_pct": 8.3,
+      "wall_time_s": 2.001
+    },
+    {
+      "cores": 29,
+      "throughput_ops_per_sec": 8383.0,
+      "speedup": 2.785,
+      "parallel_efficiency_pct": 9.6,
+      "wall_time_s": 1.73
+    },
+    {
+      "cores": 30,
+      "throughput_ops_per_sec": 8089.3,
+      "speedup": 2.688,
+      "parallel_efficiency_pct": 9.0,
+      "wall_time_s": 1.854
+    },
+    {
+      "cores": 31,
+      "throughput_ops_per_sec": 8104.8,
+      "speedup": 2.693,
+      "parallel_efficiency_pct": 8.7,
+      "wall_time_s": 1.912
+    },
+    {
+      "cores": 32,
+      "throughput_ops_per_sec": 6467.2,
+      "speedup": 2.149,
+      "parallel_efficiency_pct": 6.7,
+      "wall_time_s": 2.474
+    },
+    {
+      "cores": 33,
+      "throughput_ops_per_sec": 7970.6,
+      "speedup": 2.648,
+      "parallel_efficiency_pct": 8.0,
+      "wall_time_s": 2.07
+    },
+    {
+      "cores": 34,
+      "throughput_ops_per_sec": 8000.5,
+      "speedup": 2.658,
+      "parallel_efficiency_pct": 7.8,
+      "wall_time_s": 2.125
+    },
+    {
+      "cores": 35,
+      "throughput_ops_per_sec": 6476.4,
+      "speedup": 2.152,
+      "parallel_efficiency_pct": 6.1,
+      "wall_time_s": 2.702
+    },
+    {
+      "cores": 36,
+      "throughput_ops_per_sec": 7985.7,
+      "speedup": 2.653,
+      "parallel_efficiency_pct": 7.4,
+      "wall_time_s": 2.254
+    },
+    {
+      "cores": 37,
+      "throughput_ops_per_sec": 8208.6,
+      "speedup": 2.727,
+      "parallel_efficiency_pct": 7.4,
+      "wall_time_s": 2.254
+    },
+    {
+      "cores": 38,
+      "throughput_ops_per_sec": 7830.9,
+      "speedup": 2.602,
+      "parallel_efficiency_pct": 6.8,
+      "wall_time_s": 2.426
+    },
+    {
+      "cores": 39,
+      "throughput_ops_per_sec": 7785.7,
+      "speedup": 2.587,
+      "parallel_efficiency_pct": 6.6,
+      "wall_time_s": 2.505
+    },
+    {
+      "cores": 40,
+      "throughput_ops_per_sec": 7835.9,
+      "speedup": 2.603,
+      "parallel_efficiency_pct": 6.5,
+      "wall_time_s": 2.552
+    },
+    {
+      "cores": 41,
+      "throughput_ops_per_sec": 8101.1,
+      "speedup": 2.692,
+      "parallel_efficiency_pct": 6.6,
+      "wall_time_s": 2.531
+    },
+    {
+      "cores": 42,
+      "throughput_ops_per_sec": 7978.2,
+      "speedup": 2.651,
+      "parallel_efficiency_pct": 6.3,
+      "wall_time_s": 2.632
+    },
+    {
+      "cores": 43,
+      "throughput_ops_per_sec": 8415.5,
+      "speedup": 2.796,
+      "parallel_efficiency_pct": 6.5,
+      "wall_time_s": 2.555
+    },
+    {
+      "cores": 44,
+      "throughput_ops_per_sec": 7922.6,
+      "speedup": 2.632,
+      "parallel_efficiency_pct": 6.0,
+      "wall_time_s": 2.777
+    },
+    {
+      "cores": 45,
+      "throughput_ops_per_sec": 7758.9,
+      "speedup": 2.578,
+      "parallel_efficiency_pct": 5.7,
+      "wall_time_s": 2.9
+    },
+    {
+      "cores": 46,
+      "throughput_ops_per_sec": 7884.0,
+      "speedup": 2.619,
+      "parallel_efficiency_pct": 5.7,
+      "wall_time_s": 2.917
+    },
+    {
+      "cores": 47,
+      "throughput_ops_per_sec": 7754.9,
+      "speedup": 2.577,
+      "parallel_efficiency_pct": 5.5,
+      "wall_time_s": 3.03
+    },
+    {
+      "cores": 48,
+      "throughput_ops_per_sec": 7937.6,
+      "speedup": 2.637,
+      "parallel_efficiency_pct": 5.5,
+      "wall_time_s": 3.024
+    }
+  ],
+  "analysis": {
+    "single_core_tps": 3009.8,
+    "max_tps": 11007.9,
+    "optimal_core_count": 5,
+    "peak_efficiency_pct": 100.0,
+    "note": "Parallel efficiency = actual speedup / ideal linear speedup"
+  }
+}
