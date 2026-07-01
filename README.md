@@ -293,6 +293,12 @@ It is **NOT production-ready banking software** and must not be deployed in real
 
 ---
 
+# Acknowledgements
+
+The HPC benchmarking component of QuantumVault was conducted using the PARAM Rudra High Performance Computing facility at the Inter-University Accelerator Centre (IUAC), New Delhi.
+
+The author gratefully acknowledges the Director of IUAC and the PARAM Rudra HPC team for providing access to the national HPC infrastructure and for their technical support during this research.
+
 # 👨‍💻 Author
 
 **Varun Tej M**
